@@ -1,7 +1,7 @@
 Connect
 =======
 
-.. automodule:: pypostgresql.connect
+.. automodule:: pypsql.connect
     :members:
 
 * :ref:`genindex`

@@ -3,13 +3,13 @@ import sys
 
 sys.path.insert(0, os.path.abspath("../.."))
 
-from src import pypostgresql
+from src import pypsql
 
 # -- Project information -----------------------------------------------------
-project = "pyPostgreSQL"
+project = "pypSQL"
 copyright = "2025, Marius Liebald"
 author = "Marius Liebald"
-release = pypostgresql.__version__
+release = pypsql.__version__
 
 # -- General configuration ---------------------------------------------------
 extensions = [
@@ -56,7 +56,7 @@ html_js_files = [
     "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js",
     "https://cdn.datatables.net/2.1.8/js/dataTables.min.js",
 ]
-html_logo = "_static/img/pypostgresql_logo.png"
+html_logo = "_static/img/pypsql_logo.png"
 # html_favicon = "_static/img/favicon/favicon.ico"
 
 html_theme_options = {

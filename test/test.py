@@ -1,4 +1,4 @@
-import pypostgresql
+import pypsql
 from pathlib import Path
 import pandas as pd
 from datetime import datetime
@@ -20,7 +20,7 @@ df['timestamp'] = pd.Timestamp.now()
 # """
 
 # ssh connection
-with pypostgresql.SSHDatabaseConnector(
+with pypsql.SSHDatabaseConnector(
     ssh_host='10.1.4.56',
     ssh_username='ubuntu',
     ssh_pkey='/Users/marli453/.ssh/id_rsa_docker',
@@ -51,7 +51,7 @@ with pypostgresql.SSHDatabaseConnector(
 
 
 # # local connection
-# conn = pypostgresql.DatabaseConnector(
+# conn = pypsql.DatabaseConnector(
 #     path=Path("/Users/marli453/Desktop/"),
 #     db_credential_file='db_credentials_local.py'
 # )

@@ -1,8 +1,8 @@
-# pyPostgreSQL
+# pypSQL
 
 
-<a href="https://www.marius-liebald.com/pypostgresql/index.html" style="float:right; margin-left:10px;">
-<img src="_static/img/pypostgresql_logo_dark.png" style="height:139px !important; width:auto !important;" alt="pypostgresql utilities website" />
+<a href="https://www.marius-liebald.com/pypsql/index.html" style="float:right; margin-left:10px;">
+<img src="_static/img/pypsql_logo_dark.png" style="height:139px !important; width:auto !important;" alt="pypsql utilities website" />
 </a>
 
 <!-- badges: start -->
@@ -10,7 +10,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 <!-- badges: end -->
 
-`PyPostgreSQL` is a lightweight framework for connecting to PostgreSQL
+`pypsql` is a lightweight framework for connecting to PostgreSQL
 databases, whether locally or remotely hosted. It builds on top of
 [`SQLAlchemy`](https://www.sqlalchemy.org/) to provide a simple,
 Pythonic interface for establishing connections, running queries, and
@@ -23,7 +23,7 @@ managing database sessions.
 # Installation
 
 ``` bash
-pip install pypostgresql
+pip install pypsql
 ```
 
 # Basic Usage
@@ -55,10 +55,10 @@ An SSH tunnel is not needed if:
 In this case, simply run the Python script:
 
 ``` python
-import pypostgresql
+import pypsql
 from pathlib import Path
 
-conn = pypostgresql.DatabaseConnector(
+conn = pypsql.DatabaseConnector(
     path=Path(<path to the credential file>), # e.g., "/Users/marius/Desktop/"
     db_credential_file=<name of credential file>   # e.g., "credentials.py"
 )
@@ -83,7 +83,7 @@ To be filled.
 # Official Documentation
 
 The documentation is hosted under
-<https://www.marius-liebald.com/pypostgresql/index.html>
+<https://www.marius-liebald.com/pypsql/index.html>
 
 # License
 

@@ -1,7 +1,7 @@
 SSH_Connect
 ===========
 
-.. automodule:: pypostgresql.ssh_connect
+.. automodule:: pypsql.ssh_connect
     :members:
 
 * :ref:`genindex`
