@@ -1,0 +1,22 @@
+
+
+# Installation
+
+## PiPy
+
+To install `pypostgresql` from PyPi, run:
+
+``` bash
+pip install pypostgresql
+pip install pypostgresql
+```
+
+## From Source
+
+Clone the repository, build the package, and install it:
+
+``` bash
+git clone https://github.com/maliedvp/pypostgresql
+python -m build
+python -m pip install dist/$(basename `ls -Art dist | tail -n 1` -py3-none-any.whl .tar.gz
+```
