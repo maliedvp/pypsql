@@ -26,7 +26,8 @@ dependencies = [
     "pandas>=2.2.3",
     "sqlalchemy>=2.0.41",
     "sshtunnel>=0.4.0",
-    "psycopg2>=2.9.10"
+    "psycopg2>=2.9.10",
+    "python-dotenv>=1.1.1",
 ]
 
 [project.urls]

@@ -5,6 +5,8 @@ from sqlalchemy import text
 import pandas as pd
 import hashlib
 import pathlib
+from dotenv import load_dotenv
+import os
 
 
 def get_credentials(path, filename):
@@ -46,18 +48,31 @@ def get_credentials(path, filename):
             uri = f"postgresql://{creds['name_user']}:{creds['password_user']}@{creds['server']}:{creds['port']}/{creds['name_database']}"
     """
     try:
-        with open(path / filename, 'r') as file:
-            cred_list = file.read().splitlines()
-        cred_dict = {re.split('=',element)[0].strip() : re.sub("'","",re.split('=',element)[1].strip()) for element in cred_list}
+        if filename == '.env':
+            env_path = path / ".env"
+            load_dotenv(dotenv_path=env_path)
+
+            cred_dict = {}
+            cred_dict['SERVER'] = os.getenv("SERVER")
+            cred_dict['PORT'] = os.getenv("PORT")
+            cred_dict['NAME_DATABASE'] = os.getenv("NAME_DATABASE")
+            cred_dict['NAME_USER'] = os.getenv("NAME_USER")
+            cred_dict['PASSWORD_USER'] = os.getenv("PASSWORD_USER")
+
+
+        else:
+            with open(path / filename, 'r') as file:
+                cred_list = file.read().splitlines()
+            cred_dict = {re.split('=',element)[0].strip() : re.sub("'","",re.split('=',element)[1].strip()) for element in cred_list}
 
     except FileNotFoundError:
         pass
         cred_dict = {}
-        cred_dict['server'] = input("Enter the database's address: ")
-        cred_dict['port'] = input("Enter the port: ")
-        cred_dict['name_database'] = input("Enter the database's name: ")
-        cred_dict['name_user'] = input("Enter your username: ")
-        cred_dict['password_user'] = input("Enter your username's password: ")
+        cred_dict['SERVER'] = input("Enter the database's address: ")
+        cred_dict['PORT'] = input("Enter the port: ")
+        cred_dict['NAME_DATABASE'] = input("Enter the database's name: ")
+        cred_dict['NAME_USER'] = input("Enter your username: ")
+        cred_dict['PASSWORD_USER'] = input("Enter your username's password: ")
 
     return cred_dict
 
@@ -114,16 +129,16 @@ class DatabaseConnector():
             with dbc.start_engine() as conn:
                 rows = conn.execute(text("SELECT 1")).all()
     """
-    def __init__(self, path=pathlib.Path(__file__).parent.resolve(), db_credential_file='_credentials.py'):
+    def __init__(self, path=pathlib.Path.cwd(), db_credential_file='.env'):
         self.path = path
         self.db_credential_file = db_credential_file
 
         credentials = get_credentials(self.path, self.db_credential_file)
-        self.server = credentials['server']
-        self.port = credentials['port']
-        self.name_database = credentials['name_database']
-        self.name_user = credentials['name_user']
-        self.password_user = credentials['password_user']
+        self.server = credentials['SERVER']
+        self.port = credentials['PORT']
+        self.name_database = credentials['NAME_DATABASE']
+        self.name_user = credentials['NAME_USER']
+        self.password_user = credentials['PASSWORD_USER']
         self.engine = create_engine(
             'postgresql://' + self.name_user +':' + self.password_user + '@' + self.server + ':' + self.port + '/' + self.name_database, 
             poolclass=QueuePool, 

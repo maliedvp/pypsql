@@ -8,7 +8,6 @@ To install `pypsql` from PyPi, run:
 
 ``` bash
 pip install pypsql
-pip install pypsql
 ```
 
 ## From Source

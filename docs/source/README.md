@@ -33,11 +33,11 @@ pip install pypsql
 You can store the database connection details in a file, for example:
 
 ``` python
-server=<host name or address>   # e.g., localhost, 127.0.0.1, or a public IP
-port=<port number>              # default: 5432
-name_database=<database name>   # e.g., my_db
-name_user=<role>                # e.g., Alice
-password_user=<password>        # e.g., 123abc
+SERVER=<host name or address>   # e.g., localhost, 127.0.0.1, or a public IP
+PORT=<port number>              # default: 5432
+NAME_DATABASE=<database name>   # e.g., my_db
+NAME_USER=<role>                # e.g., Alice
+PASSWORD_USER=<password>        # e.g., 123abc
 ```
 
 You may place this file anywhere on the client machine. Importantly,
@@ -59,8 +59,8 @@ import pypsql
 from pathlib import Path
 
 conn = pypsql.DatabaseConnector(
-    path=Path(<path to the credential file>), # e.g., "/Users/marius/Desktop/"
-    db_credential_file=<name of credential file>   # e.g., "credentials.py"
+    path=Path(<path to the credential file>), # e.g., "/Users/marius/Desktop/" # if the .env file is located in the same directory as the script you are executing, you can leave this argument undefined
+    db_credential_file=<name of credential file>   # e.g., ".env" (default) or "credentials.py"
 )
 
 sql_script = """
