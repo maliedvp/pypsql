@@ -6,6 +6,29 @@ from sshtunnel import SSHTunnelForwarder
 from .connect import DatabaseConnector, get_credentials
 
 class SSHDatabaseConnector:
+    """Establish a secure SSH tunnel to a remote database host and manage connections.
+
+    This class creates an SSH tunnel to a remote database server, forwarding a local port to
+    the remote host and port defined in a credentials file. It integrates with
+    :class:`DatabaseConnector` to enable data operations (query, insert, drop, execute) over the
+    secure tunnel.
+
+    The SSH connection uses a specified private key and credentials defined in a `.env` file.
+    Once connected, database queries can be executed transparently through the tunnel.
+
+    Args:
+        ssh_port (int, optional): SSH port on the remote host. Defaults to 22.
+        ssh_key_passphrase (str | None, optional): Passphrase for the SSH private key if encrypted.
+            Defaults to None.
+        db_credential_file (str, optional): Name of the credentials file containing both SSH and
+            database connection information. Defaults to ".env".
+        path (pathlib.Path, optional): Path to the directory containing the credentials file.
+            Defaults to the current working directory.
+
+    Raises:
+        ValueError: If the credentials file is missing required keys or if the port is invalid.
+        RuntimeError: If the SSH tunnel fails to establish.
+    """
     def __init__(
         self,
         ssh_port: int = 22,
