@@ -34,7 +34,6 @@ coverage.xml
 ._*                       # macOS resource forks
 .fseventsd                # macOS file system events
 .VolumeIcon.icns          # macOS volume icon
-.*
 
 Thumbs.db                 # Windows thumbnail cache
 ehthumbs.db               # Windows enhanced thumbnail cache
@@ -46,6 +45,8 @@ System Volume Information # Windows volume info
 .cache/                   # Linux user cache files
 .config/                  # Linux user config files
 .local/                   # Linux local state files
+
+test/
 
 # Logs and temp files
 *.log
