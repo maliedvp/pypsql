@@ -26,11 +26,14 @@ managing database sessions.
 pip install pypsql
 ```
 
-# Basic Usage
+# Usage
 
-## Provide database credentials
+## Local Usage
 
-You can store the database connection details in a file, for example:
+### Provide database credentials
+
+You can store the database connection details in a file, for example
+`.env`:
 
 ``` python
 SERVER=<host name or address>   # e.g., localhost, 127.0.0.1, or a public IP
@@ -44,13 +47,15 @@ You may place this file anywhere on the client machine. Importantly,
 this step is optional. You can also provide the variables interactively
 via terminal prompts.
 
-## No SSH required
+### When to be used?
 
-An SSH tunnel is not needed if:
+Use this approach if an SSH tunnel is not needed. This is the case if:
 
 - the server and client run on the same machine,
 - the server and client are in the same (virtual) network, or
 - the server is accessible via its public IP.
+
+### Connecting
 
 In this case, simply run the Python script:
 
@@ -58,27 +63,60 @@ In this case, simply run the Python script:
 import pypsql
 from pathlib import Path
 
+sql_script = """
+SELECT *
+FROM customers
+"""
+
+# local connection
 conn = pypsql.DatabaseConnector(
-    path=Path(<path to the credential file>), # e.g., "/Users/marius/Desktop/" # if the .env file is located in the same directory as the script you are executing, you can leave this argument undefined
-    db_credential_file=<name of credential file>   # e.g., ".env" (default) or "credentials.py"
+    db_credential_file='.env_local'
 )
+
+df = conn.get_data(sql_script)
+print(df)
+```
+
+## Usage via an SSH Tunnel
+
+### Provide database & SSH credentials
+
+Again, create an `.env` file. You may want to store it in the same
+directory as the Python script that accesses the database when executed.
+This time the `.env` needs to follow this structure:
+
+``` python
+SERVER=<host name or address>              # e.g., localhost, 127.0.0.1
+PORT=<port number>                         # default: 5432
+NAME_DATABASE=<database name>              # e.g., my_db
+NAME_USER=<role>                           # e.g., Alice
+PASSWORD_USER=<password>                   # e.g., 123abc
+SSH_USERNAME=<public IP of remote server>
+SSH_PKEY=<path of private SSH key>         # e.g., ~/.ssh/id_rsa
+SSH_PORT=<ssh port of remote server>       # default: 22
+```
+
+### Connecting
+
+Then you can connect to the database via the SSH tunnel in the following
+way:
+
+``` python
+from pypsql import SSHDatabaseConnector
+from pathlib import Path
 
 sql_script = """
 SELECT *
 FROM customers
 """
 
-df = conn.get_data(sql_script)
-
-print(df)
+with SSHDatabaseConnector(
+  ssh_port = 22,
+  db_credential_file='.env_ssh'
+) as ssh_db:    
+  df = ssh_db.get_data(sql_script)
+  print(df)
 ```
-
-Note that this example assumes the database contains a table named
-`customers`.
-
-## Connection via SSH
-
-To be filled.
 
 # Official Documentation
 
