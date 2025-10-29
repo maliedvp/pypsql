@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pypsql.connect &mdash; pypSQL 1.0.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/extra.css?v=503a7970" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=71272d9f"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pypSQL
+              <img src="../../_static/pypsql_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#pipy">PiPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#from-source">From Source</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../connect.html">Connect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.path"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.path</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.db_credential_file"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.db_credential_file</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.server"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.server</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.port"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.port</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.name_database"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.name_database</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.name_user"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.name_user</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.password_user"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.password_user</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.engine"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.engine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.__init__"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.drop_table"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.drop_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.execute_script"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.execute_script()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.get_data"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.get_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.is_multiline"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.is_multiline()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.push_data"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.push_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.start_engine"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.start_engine()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../connect.html#pypsql.connect.get_credentials"><code class="docutils literal notranslate"><span class="pre">get_credentials()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../connect.html#pypsql.connect.hash_value"><code class="docutils literal notranslate"><span class="pre">hash_value()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssh_connect.html">SSH_Connect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ssh_connect.html#pypsql.ssh_connect.SSHDatabaseConnector"><code class="docutils literal notranslate"><span class="pre">SSHDatabaseConnector</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ssh_connect.html#pypsql.ssh_connect.SSHDatabaseConnector.__init__"><code class="docutils literal notranslate"><span class="pre">SSHDatabaseConnector.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../LICENSE.html">License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pypSQL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">pypsql.connect</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for pypsql.connect</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy.pool</span><span class="w"> </span><span class="kn">import</span> <span class="n">QueuePool</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">text</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+
+<div class="viewcode-block" id="get_credentials">
+<a class="viewcode-back" href="../../connect.html#pypsql.connect.get_credentials">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_credentials</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load database credentials from a simple key=value file, or interactively prompt the user.</span>
+
+<span class="sd">    The credentials file is expected to contain one *key=value* pair per line. Values may be</span>
+<span class="sd">    single-quoted. Example:</span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        server=localhost</span>
+<span class="sd">        port=5432</span>
+<span class="sd">        name_database=&#39;mydb&#39;</span>
+<span class="sd">        name_user=&#39;alice&#39;</span>
+<span class="sd">        password_user=&#39;s3cr3t&#39;</span>
+
+<span class="sd">    If the file is missing, the user is prompted for each required field.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (pathlib.Path): Directory containing the credentials file.</span>
+<span class="sd">        filename (str): Name of the credentials file to read.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dictionary with keys:</span>
+<span class="sd">            - ``server`` (str)</span>
+<span class="sd">            - ``port`` (str)</span>
+<span class="sd">            - ``name_database`` (str)</span>
+<span class="sd">            - ``name_user`` (str)</span>
+<span class="sd">            - ``password_user`` (str)</span>
+
+<span class="sd">    Notes:</span>
+<span class="sd">        - Trailing quotes in values are stripped.</span>
+<span class="sd">        - Empty or malformed lines are ignored.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            creds = get_credentials(Path.cwd(), &quot;_credentials.py&quot;)</span>
+<span class="sd">            uri = f&quot;postgresql://{creds[&#39;name_user&#39;]}:{creds[&#39;password_user&#39;]}@{creds[&#39;server&#39;]}:{creds[&#39;port&#39;]}/{creds[&#39;name_database&#39;]}&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">filename</span> <span class="o">==</span> <span class="s1">&#39;.env&#39;</span><span class="p">:</span>
+            <span class="n">env_path</span> <span class="o">=</span> <span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;.env&quot;</span>
+            <span class="n">load_dotenv</span><span class="p">(</span><span class="n">dotenv_path</span><span class="o">=</span><span class="n">env_path</span><span class="p">)</span>
+
+            <span class="n">cred_dict</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">cred_dict</span><span class="p">[</span><span class="s1">&#39;SERVER&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;SERVER&quot;</span><span class="p">)</span>
+            <span class="n">cred_dict</span><span class="p">[</span><span class="s1">&#39;PORT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PORT&quot;</span><span class="p">)</span>
+            <span class="n">cred_dict</span><span class="p">[</span><span class="s1">&#39;NAME_DATABASE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NAME_DATABASE&quot;</span><span class="p">)</span>
+            <span class="n">cred_dict</span><span class="p">[</span><span class="s1">&#39;NAME_USER&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NAME_USER&quot;</span><span class="p">)</span>
+            <span class="n">cred_dict</span><span class="p">[</span><span class="s1">&#39;PASSWORD_USER&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PASSWORD_USER&quot;</span><span class="p">)</span>
+
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+                <span class="n">cred_list</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+            <span class="n">cred_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span><span class="n">element</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span><span class="n">element</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">cred_list</span><span class="p">}</span>
+
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="k">pass</span>
+        <span class="n">cred_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">cred_dict</span><span class="p">[</span><span class="s1">&#39;SERVER&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the database&#39;s address: &quot;</span><span class="p">)</span>
+        <span class="n">cred_dict</span><span class="p">[</span><span class="s1">&#39;PORT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the port: &quot;</span><span class="p">)</span>
+        <span class="n">cred_dict</span><span class="p">[</span><span class="s1">&#39;NAME_DATABASE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the database&#39;s name: &quot;</span><span class="p">)</span>
+        <span class="n">cred_dict</span><span class="p">[</span><span class="s1">&#39;NAME_USER&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your username: &quot;</span><span class="p">)</span>
+        <span class="n">cred_dict</span><span class="p">[</span><span class="s1">&#39;PASSWORD_USER&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your username&#39;s password: &quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">cred_dict</span></div>
+
+
+
+<div class="viewcode-block" id="hash_value">
+<a class="viewcode-back" href="../../connect.html#pypsql.connect.hash_value">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">hash_value</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute a SHA-256 hash (hex digest) of a UTF-8 string.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        value (str): The input string to hash.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The 64-character hexadecimal SHA-256 digest.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            digest = hash_value(&quot;p@ssw0rd&quot;)</span>
+<span class="sd">            # &#39;5e884898da28047151d0e56f8dc62927...&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sha256</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">()</span>
+    <span class="n">sha256</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">sha256</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="DatabaseConnector">
+<a class="viewcode-back" href="../../connect.html#pypsql.connect.DatabaseConnector">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DatabaseConnector</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a PostgreSQL connector backed by SQLAlchemy with a queued connection pool.</span>
+
+<span class="sd">    This class reads connection parameters from a credentials file (see</span>
+<span class="sd">    ``get_credentials``) and constructs an SQLAlchemy engine. It provides helpers</span>
+<span class="sd">    to execute queries, push pandas DataFrames, and run SQL scripts.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (pathlib.Path, optional): Base path where SQL files and the credentials</span>
+<span class="sd">            file live. Defaults to the directory of this module.</span>
+<span class="sd">        db_credential_file (str, optional): Filename of the credentials file within</span>
+<span class="sd">            ``path``. Defaults to ``&#39;_credentials.py&#39;``.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        path (pathlib.Path): Base path for SQL files and credentials.</span>
+<span class="sd">        db_credential_file (str): Credentials filename.</span>
+<span class="sd">        server (str): Database host.</span>
+<span class="sd">        port (str): Database port.</span>
+<span class="sd">        name_database (str): Database name.</span>
+<span class="sd">        name_user (str): Username.</span>
+<span class="sd">        password_user (str): Password.</span>
+<span class="sd">        engine (sqlalchemy.engine.Engine): Configured SQLAlchemy engine using</span>
+<span class="sd">            ``QueuePool`` (``pool_size=10``).</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            dbc = DatabaseConnector()</span>
+<span class="sd">            with dbc.start_engine() as conn:</span>
+<span class="sd">                rows = conn.execute(text(&quot;SELECT 1&quot;)).all()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="DatabaseConnector.__init__">
+<a class="viewcode-back" href="../../connect.html#pypsql.connect.DatabaseConnector.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span> <span class="n">db_credential_file</span><span class="o">=</span><span class="s1">&#39;.env&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db_credential_file</span> <span class="o">=</span> <span class="n">db_credential_file</span>
+
+        <span class="n">credentials</span> <span class="o">=</span> <span class="n">get_credentials</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_credential_file</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">server</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;SERVER&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;PORT&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name_database</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;NAME_DATABASE&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name_user</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;NAME_USER&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">password_user</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;PASSWORD_USER&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span>
+            <span class="s1">&#39;postgresql://&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name_user</span> <span class="o">+</span><span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">password_user</span> <span class="o">+</span> <span class="s1">&#39;@&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name_database</span><span class="p">,</span> 
+            <span class="n">poolclass</span><span class="o">=</span><span class="n">QueuePool</span><span class="p">,</span> 
+            <span class="n">pool_size</span><span class="o">=</span><span class="mi">10</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DatabaseConnector.start_engine">
+<a class="viewcode-back" href="../../connect.html#pypsql.connect.DatabaseConnector.start_engine">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">start_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Open a new connection from the configured SQLAlchemy engine.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            sqlalchemy.engine.Connection: An active database connection.</span>
+
+<span class="sd">        Notes:</span>
+<span class="sd">            The caller is responsible for closing the connection (use a context manager</span>
+<span class="sd">            or ``close()``).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="DatabaseConnector.is_multiline">
+<a class="viewcode-back" href="../../connect.html#pypsql.connect.DatabaseConnector.is_multiline">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_multiline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return True if the string contains at least one newline.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            string (str): String to test.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: ``True`` if multiline, else ``False``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">string</span></div>
+
+
+<div class="viewcode-block" id="DatabaseConnector.get_data">
+<a class="viewcode-back" href="../../connect.html#pypsql.connect.DatabaseConnector.get_data">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sql_file</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">replace_dict</span><span class="p">:</span><span class="nb">dict</span><span class="o">=</span><span class="p">{},</span> <span class="n">outcommenting</span><span class="p">:</span><span class="nb">list</span><span class="o">=</span><span class="p">[]):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fetch data using an external SQL file or a raw SQL string with simple templating.</span>
+
+<span class="sd">        You can pass either:</span>
+
+<span class="sd">        - the path (relative to ``self.path``) to a ``.sql`` file, **or**</span>
+<span class="sd">        - a raw SQL string (multiline strings are treated as SQL).</span>
+
+<span class="sd">        Two templating conventions are supported:</span>
+
+<span class="sd">        - ``%KEY`` → replaced with a **quoted** value when ``replace_dict[&#39;KEY&#39;]`` is a string,</span>
+<span class="sd">          or with the plain value for non-strings.</span>
+<span class="sd">        - ``§KEY`` → replaced with the **unquoted** value (useful for identifiers or lists).</span>
+
+<span class="sd">        You can also **outcomment** lines containing a key and a percent marker by listing the</span>
+<span class="sd">        key in ``outcommenting``. Matching lines are prefixed with ``--`` **only if** that key</span>
+<span class="sd">        has not already been replaced.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            sql_file (str): Relative path to a SQL file under ``self.path`` **or** a raw</span>
+<span class="sd">                SQL string (multiline).</span>
+<span class="sd">            replace_dict (dict, optional): Mapping of placeholder keys to replacement values.</span>
+<span class="sd">                Use ``%KEY`` for auto-quoting strings, ``§KEY`` for raw insertion.</span>
+<span class="sd">                Defaults to ``{}``.</span>
+<span class="sd">            outcommenting (list, optional): Keys whose matching lines (containing the key and</span>
+<span class="sd">                a ``%``) should be commented out. Defaults to ``[]``.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pandas.DataFrame: Query results.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+
+<span class="sd">        Replace a scalar::</span>
+
+<span class="sd">            df = dbc.get_data(&quot;queries/get_users.sql&quot;, replace_dict={&quot;user_id&quot;: 42})</span>
+
+<span class="sd">        Insert a raw identifier or list::</span>
+
+<span class="sd">            df = dbc.get_data(&quot;q.sql&quot;, replace_dict={&quot;schema&quot;: &quot;public&quot;})</span>
+<span class="sd">            # In SQL: SELECT * FROM §schema.users  -&gt; SELECT * FROM public.users</span>
+
+<span class="sd">        Outcomment a filter::</span>
+
+<span class="sd">            df = dbc.get_data(&quot;q.sql&quot;, outcommenting=[&quot;limit_clause&quot;])</span>
+<span class="sd">            # A line like:  AND users.age &gt; %limit_clause  -&gt;  --AND users.age &gt; %limit_clause</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        - Replacements are simple regex substitutions; ensure your placeholders do not</span>
+<span class="sd">          collide with SQL content.</span>
+<span class="sd">        - Prefer parameterized queries for user-supplied data when possible.</span>
+
+<span class="sd">        Security</span>
+<span class="sd">        --------</span>
+<span class="sd">        This helper performs textual substitution. Avoid injecting untrusted input into</span>
+<span class="sd">        identifiers or raw fragments (``§KEY``). For dynamic values, prefer ``%KEY`` with</span>
+<span class="sd">        safe literals or use SQLAlchemy parameters.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_multiline</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">sql_file</span><span class="p">))</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">/</span> <span class="n">sql_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+                <span class="n">query</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">query</span> <span class="o">=</span> <span class="n">sql_file</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">replace_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">query</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="o">+</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;&#39;&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+                <span class="n">query</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;§&#39;</span><span class="o">+</span><span class="n">key</span><span class="p">,</span>  <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="n">query</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">query</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="o">+</span><span class="n">key</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="n">query</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">outcommenting</span> <span class="o">!=</span> <span class="p">[]:</span>
+            <span class="k">for</span> <span class="n">oc</span> <span class="ow">in</span> <span class="n">outcommenting</span><span class="p">:</span>
+                <span class="n">dict_outcomment</span> <span class="o">=</span> <span class="p">{</span><span class="n">line</span><span class="p">:</span><span class="s1">&#39;--&#39;</span><span class="o">+</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">query</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">oc</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">}</span>
+                <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">dict_outcomment</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">query</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">query</span><span class="p">)</span>
+        <span class="c1"># print(query)</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="n">text</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span> <span class="k">as</span> <span class="n">connection</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">connection</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="DatabaseConnector.push_data">
+<a class="viewcode-back" href="../../connect.html#pypsql.connect.DatabaseConnector.push_data">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">push_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">schema</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">table</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">if_exists</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Write a pandas DataFrame to a PostgreSQL table.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            df (pandas.DataFrame): The DataFrame to persist.</span>
+<span class="sd">            schema (str): Target schema name.</span>
+<span class="sd">            table (str): Target table name.</span>
+<span class="sd">            if_exists (str, optional): One of ``&#39;replace&#39;``, ``&#39;fail&#39;``, or ``&#39;append&#39;``.</span>
+<span class="sd">                Defaults to ``&#39;replace&#39;``.</span>
+<span class="sd">            index (bool, optional): Whether to write the DataFrame index. Defaults to ``True``.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            .. code-block:: python</span>
+
+<span class="sd">                dbc.push_data(df, schema=&quot;public&quot;, table=&quot;events&quot;, if_exists=&quot;append&quot;)</span>
+
+<span class="sd">        Notes:</span>
+<span class="sd">            Uses ``engine.begin()`` for transactional writes and sets ``index_label=&#39;idx&#39;``</span>
+<span class="sd">            when ``index=True``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="k">as</span> <span class="n">connection</span><span class="p">:</span>  <span class="c1"># Ensures proper transaction handling and connection closure</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">table</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">connection</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="n">if_exists</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">index_label</span><span class="o">=</span><span class="s1">&#39;idx&#39;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="DatabaseConnector.drop_table">
+<a class="viewcode-back" href="../../connect.html#pypsql.connect.DatabaseConnector.drop_table">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">drop_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schema</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">table</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Drop a table if it exists.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            schema (str): Schema name.</span>
+<span class="sd">            table (str): Table name.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            .. code-block:: python</span>
+
+<span class="sd">                dbc.drop_table(&quot;public&quot;, &quot;staging_temp&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;DROP TABLE IF EXISTS </span><span class="si">{</span><span class="n">schema</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">table</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="k">as</span> <span class="n">connection</span><span class="p">:</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">text</span><span class="p">(</span><span class="n">query</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="DatabaseConnector.execute_script">
+<a class="viewcode-back" href="../../connect.html#pypsql.connect.DatabaseConnector.execute_script">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">execute_script</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sql_script</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute an arbitrary SQL script within a transaction.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            sql_script (str): A full SQL statement or multi-statement script.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            .. code-block:: python</span>
+
+<span class="sd">                dbc.execute_script(\&quot;\&quot;\&quot;</span>
+<span class="sd">                CREATE TABLE IF NOT EXISTS public.example(id int primary key);</span>
+<span class="sd">                INSERT INTO public.example VALUES (1) ON CONFLICT DO NOTHING;</span>
+<span class="sd">                \&quot;\&quot;\&quot;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="k">as</span> <span class="n">connection</span><span class="p">:</span>
+            <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">text</span><span class="p">(</span><span class="n">sql_script</span><span class="p">))</span></div>
+
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_reconnect_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;(Internal) Create a fresh SQLAlchemy engine with the current credentials.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            sqlalchemy.engine.Engine: A newly constructed engine instance with</span>
+<span class="sd">            ``gssencmode=disable`` and a ``QueuePool`` (``pool_size=10``).</span>
+
+<span class="sd">        Notes:</span>
+<span class="sd">            Useful if the original engine needs to be recreated due to environment changes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">create_engine</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;postgresql://</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name_user</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">password_user</span><span class="si">}</span><span class="s1">@&#39;</span>
+            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name_database</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="sa">f</span><span class="s1">&#39;?gssencmode=disable&#39;</span><span class="p">,</span>
+            <span class="n">poolclass</span><span class="o">=</span><span class="n">QueuePool</span><span class="p">,</span>
+            <span class="n">pool_size</span><span class="o">=</span><span class="mi">10</span>
+        <span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Marius Liebald.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

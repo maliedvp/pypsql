@@ -1,0 +1,520 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connect &mdash; pypSQL 1.0.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=503a7970" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=71272d9f"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SSH_Connect" href="ssh_connect.html" />
+    <link rel="prev" title="Installation" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pypSQL
+              <img src="_static/pypsql_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#pipy">PiPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#from-source">From Source</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Connect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pypsql.connect.DatabaseConnector"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.path"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.path</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.db_credential_file"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.db_credential_file</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.server"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.server</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.port"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.port</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.name_database"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.name_database</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.name_user"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.name_user</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.password_user"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.password_user</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.engine"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.engine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.__init__"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.drop_table"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.drop_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.execute_script"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.execute_script()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.get_data"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.get_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.is_multiline"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.is_multiline()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.push_data"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.push_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypsql.connect.DatabaseConnector.start_engine"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.start_engine()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#pypsql.connect.get_credentials"><code class="docutils literal notranslate"><span class="pre">get_credentials()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pypsql.connect.hash_value"><code class="docutils literal notranslate"><span class="pre">hash_value()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ssh_connect.html">SSH_Connect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ssh_connect.html#pypsql.ssh_connect.SSHDatabaseConnector"><code class="docutils literal notranslate"><span class="pre">SSHDatabaseConnector</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ssh_connect.html#pypsql.ssh_connect.SSHDatabaseConnector.__init__"><code class="docutils literal notranslate"><span class="pre">SSHDatabaseConnector.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="LICENSE.html">License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pypSQL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Connect</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/connect.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pypsql.connect">
+<span id="connect"></span><h1>Connect<a class="headerlink" href="#module-pypsql.connect" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypsql.connect.</span></span><span class="sig-name descname"><span class="pre">DatabaseConnector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('/home/runner/work/pypsql/pypsql/docs')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_credential_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.env'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pypsql/connect.html#DatabaseConnector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypsql.connect.DatabaseConnector" title="Link to this definition"></a></dt>
+<dd><p>Create a PostgreSQL connector backed by SQLAlchemy with a queued connection pool.</p>
+<p>This class reads connection parameters from a credentials file (see
+<code class="docutils literal notranslate"><span class="pre">get_credentials</span></code>) and constructs an SQLAlchemy engine. It provides helpers
+to execute queries, push pandas DataFrames, and run SQL scripts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>pathlib.Path</em><em>, </em><em>optional</em>) – Base path where SQL files and the credentials
+file live. Defaults to the directory of this module.</p></li>
+<li><p><strong>db_credential_file</strong> (<em>str</em><em>, </em><em>optional</em>) – Filename of the credentials file within
+<code class="docutils literal notranslate"><span class="pre">path</span></code>. Defaults to <code class="docutils literal notranslate"><span class="pre">'_credentials.py'</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.path">
+<span class="sig-name descname"><span class="pre">path</span></span><a class="headerlink" href="#pypsql.connect.DatabaseConnector.path" title="Link to this definition"></a></dt>
+<dd><p>Base path for SQL files and credentials.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pathlib.Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.db_credential_file">
+<span class="sig-name descname"><span class="pre">db_credential_file</span></span><a class="headerlink" href="#pypsql.connect.DatabaseConnector.db_credential_file" title="Link to this definition"></a></dt>
+<dd><p>Credentials filename.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.server">
+<span class="sig-name descname"><span class="pre">server</span></span><a class="headerlink" href="#pypsql.connect.DatabaseConnector.server" title="Link to this definition"></a></dt>
+<dd><p>Database host.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.port">
+<span class="sig-name descname"><span class="pre">port</span></span><a class="headerlink" href="#pypsql.connect.DatabaseConnector.port" title="Link to this definition"></a></dt>
+<dd><p>Database port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.name_database">
+<span class="sig-name descname"><span class="pre">name_database</span></span><a class="headerlink" href="#pypsql.connect.DatabaseConnector.name_database" title="Link to this definition"></a></dt>
+<dd><p>Database name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.name_user">
+<span class="sig-name descname"><span class="pre">name_user</span></span><a class="headerlink" href="#pypsql.connect.DatabaseConnector.name_user" title="Link to this definition"></a></dt>
+<dd><p>Username.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.password_user">
+<span class="sig-name descname"><span class="pre">password_user</span></span><a class="headerlink" href="#pypsql.connect.DatabaseConnector.password_user" title="Link to this definition"></a></dt>
+<dd><p>Password.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.engine">
+<span class="sig-name descname"><span class="pre">engine</span></span><a class="headerlink" href="#pypsql.connect.DatabaseConnector.engine" title="Link to this definition"></a></dt>
+<dd><p>Configured SQLAlchemy engine using
+<code class="docutils literal notranslate"><span class="pre">QueuePool</span></code> (<code class="docutils literal notranslate"><span class="pre">pool_size=10</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sqlalchemy.engine.Engine</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dbc</span> <span class="o">=</span> <span class="n">DatabaseConnector</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">dbc</span><span class="o">.</span><span class="n">start_engine</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;SELECT 1&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('/home/runner/work/pypsql/pypsql/docs')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_credential_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.env'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pypsql/connect.html#DatabaseConnector.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypsql.connect.DatabaseConnector.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.drop_table">
+<span class="sig-name descname"><span class="pre">drop_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pypsql/connect.html#DatabaseConnector.drop_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypsql.connect.DatabaseConnector.drop_table" title="Link to this definition"></a></dt>
+<dd><p>Drop a table if it exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>schema</strong> (<em>str</em>) – Schema name.</p></li>
+<li><p><strong>table</strong> (<em>str</em>) – Table name.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dbc</span><span class="o">.</span><span class="n">drop_table</span><span class="p">(</span><span class="s2">&quot;public&quot;</span><span class="p">,</span> <span class="s2">&quot;staging_temp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.execute_script">
+<span class="sig-name descname"><span class="pre">execute_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql_script</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pypsql/connect.html#DatabaseConnector.execute_script"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypsql.connect.DatabaseConnector.execute_script" title="Link to this definition"></a></dt>
+<dd><p>Execute an arbitrary SQL script within a transaction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sql_script</strong> (<em>str</em>) – A full SQL statement or multi-statement script.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dbc</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">CREATE TABLE IF NOT EXISTS public.example(id int primary key);</span>
+<span class="s2">INSERT INTO public.example VALUES (1) ON CONFLICT DO NOTHING;</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outcommenting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pypsql/connect.html#DatabaseConnector.get_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypsql.connect.DatabaseConnector.get_data" title="Link to this definition"></a></dt>
+<dd><p>Fetch data using an external SQL file or a raw SQL string with simple templating.</p>
+<p>You can pass either:</p>
+<ul class="simple">
+<li><p>the path (relative to <code class="docutils literal notranslate"><span class="pre">self.path</span></code>) to a <code class="docutils literal notranslate"><span class="pre">.sql</span></code> file, <strong>or</strong></p></li>
+<li><p>a raw SQL string (multiline strings are treated as SQL).</p></li>
+</ul>
+<p>Two templating conventions are supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%KEY</span></code> → replaced with a <strong>quoted</strong> value when <code class="docutils literal notranslate"><span class="pre">replace_dict['KEY']</span></code> is a string,
+or with the plain value for non-strings.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">§KEY</span></code> → replaced with the <strong>unquoted</strong> value (useful for identifiers or lists).</p></li>
+</ul>
+<p>You can also <strong>outcomment</strong> lines containing a key and a percent marker by listing the
+key in <code class="docutils literal notranslate"><span class="pre">outcommenting</span></code>. Matching lines are prefixed with <code class="docutils literal notranslate"><span class="pre">--</span></code> <strong>only if</strong> that key
+has not already been replaced.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sql_file</strong> (<em>str</em>) – Relative path to a SQL file under <code class="docutils literal notranslate"><span class="pre">self.path</span></code> <strong>or</strong> a raw
+SQL string (multiline).</p></li>
+<li><p><strong>replace_dict</strong> (<em>dict</em><em>, </em><em>optional</em>) – Mapping of placeholder keys to replacement values.
+Use <code class="docutils literal notranslate"><span class="pre">%KEY</span></code> for auto-quoting strings, <code class="docutils literal notranslate"><span class="pre">§KEY</span></code> for raw insertion.
+Defaults to <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p></li>
+<li><p><strong>outcommenting</strong> (<em>list</em><em>, </em><em>optional</em>) – Keys whose matching lines (containing the key and
+a <code class="docutils literal notranslate"><span class="pre">%</span></code>) should be commented out. Defaults to <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Query results.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Replace a scalar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">dbc</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="s2">&quot;queries/get_users.sql&quot;</span><span class="p">,</span> <span class="n">replace_dict</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Insert a raw identifier or list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">dbc</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="s2">&quot;q.sql&quot;</span><span class="p">,</span> <span class="n">replace_dict</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="s2">&quot;public&quot;</span><span class="p">})</span>
+<span class="c1"># In SQL: SELECT * FROM §schema.users  -&gt; SELECT * FROM public.users</span>
+</pre></div>
+</div>
+<p>Outcomment a filter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">dbc</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="s2">&quot;q.sql&quot;</span><span class="p">,</span> <span class="n">outcommenting</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;limit_clause&quot;</span><span class="p">])</span>
+<span class="c1"># A line like:  AND users.age &gt; %limit_clause  -&gt;  --AND users.age &gt; %limit_clause</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Replacements are simple regex substitutions; ensure your placeholders do not
+collide with SQL content.</p></li>
+<li><p>Prefer parameterized queries for user-supplied data when possible.</p></li>
+</ul>
+<section id="security">
+<h2>Security<a class="headerlink" href="#security" title="Link to this heading"></a></h2>
+<p>This helper performs textual substitution. Avoid injecting untrusted input into
+identifiers or raw fragments (<code class="docutils literal notranslate"><span class="pre">§KEY</span></code>). For dynamic values, prefer <code class="docutils literal notranslate"><span class="pre">%KEY</span></code> with
+safe literals or use SQLAlchemy parameters.</p>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.is_multiline">
+<span class="sig-name descname"><span class="pre">is_multiline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pypsql/connect.html#DatabaseConnector.is_multiline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypsql.connect.DatabaseConnector.is_multiline" title="Link to this definition"></a></dt>
+<dd><p>Return True if the string contains at least one newline.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – String to test.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if multiline, else <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.push_data">
+<span class="sig-name descname"><span class="pre">push_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_exists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'replace'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pypsql/connect.html#DatabaseConnector.push_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypsql.connect.DatabaseConnector.push_data" title="Link to this definition"></a></dt>
+<dd><p>Write a pandas DataFrame to a PostgreSQL table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – The DataFrame to persist.</p></li>
+<li><p><strong>schema</strong> (<em>str</em>) – Target schema name.</p></li>
+<li><p><strong>table</strong> (<em>str</em>) – Target table name.</p></li>
+<li><p><strong>if_exists</strong> (<em>str</em><em>, </em><em>optional</em>) – One of <code class="docutils literal notranslate"><span class="pre">'replace'</span></code>, <code class="docutils literal notranslate"><span class="pre">'fail'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'append'</span></code>.
+Defaults to <code class="docutils literal notranslate"><span class="pre">'replace'</span></code>.</p></li>
+<li><p><strong>index</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to write the DataFrame index. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dbc</span><span class="o">.</span><span class="n">push_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="s2">&quot;public&quot;</span><span class="p">,</span> <span class="n">table</span><span class="o">=</span><span class="s2">&quot;events&quot;</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s2">&quot;append&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>Uses <code class="docutils literal notranslate"><span class="pre">engine.begin()</span></code> for transactional writes and sets <code class="docutils literal notranslate"><span class="pre">index_label='idx'</span></code>
+when <code class="docutils literal notranslate"><span class="pre">index=True</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypsql.connect.DatabaseConnector.start_engine">
+<span class="sig-name descname"><span class="pre">start_engine</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pypsql/connect.html#DatabaseConnector.start_engine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypsql.connect.DatabaseConnector.start_engine" title="Link to this definition"></a></dt>
+<dd><p>Open a new connection from the configured SQLAlchemy engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An active database connection.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sqlalchemy.engine.Connection</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The caller is responsible for closing the connection (use a context manager
+or <code class="docutils literal notranslate"><span class="pre">close()</span></code>).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypsql.connect.get_credentials">
+<span class="sig-prename descclassname"><span class="pre">pypsql.connect.</span></span><span class="sig-name descname"><span class="pre">get_credentials</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pypsql/connect.html#get_credentials"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypsql.connect.get_credentials" title="Link to this definition"></a></dt>
+<dd><p>Load database credentials from a simple key=value file, or interactively prompt the user.</p>
+<p>The credentials file is expected to contain one <em>key=value</em> pair per line. Values may be
+single-quoted. Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">server</span><span class="o">=</span><span class="n">localhost</span>
+<span class="n">port</span><span class="o">=</span><span class="mi">5432</span>
+<span class="n">name_database</span><span class="o">=</span><span class="s1">&#39;mydb&#39;</span>
+<span class="n">name_user</span><span class="o">=</span><span class="s1">&#39;alice&#39;</span>
+<span class="n">password_user</span><span class="o">=</span><span class="s1">&#39;s3cr3t&#39;</span>
+</pre></div>
+</div>
+<p>If the file is missing, the user is prompted for each required field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>pathlib.Path</em>) – Directory containing the credentials file.</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – Name of the credentials file to read.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A dictionary with keys:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">server</span></code> (str)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">port</span></code> (str)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name_database</span></code> (str)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name_user</span></code> (str)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">password_user</span></code> (str)</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Trailing quotes in values are stripped.</p></li>
+<li><p>Empty or malformed lines are ignored.</p></li>
+</ul>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">creds</span> <span class="o">=</span> <span class="n">get_credentials</span><span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span> <span class="s2">&quot;_credentials.py&quot;</span><span class="p">)</span>
+<span class="n">uri</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;postgresql://</span><span class="si">{</span><span class="n">creds</span><span class="p">[</span><span class="s1">&#39;name_user&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">creds</span><span class="p">[</span><span class="s1">&#39;password_user&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">creds</span><span class="p">[</span><span class="s1">&#39;server&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">creds</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">creds</span><span class="p">[</span><span class="s1">&#39;name_database&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pypsql.connect.hash_value">
+<span class="sig-prename descclassname"><span class="pre">pypsql.connect.</span></span><span class="sig-name descname"><span class="pre">hash_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pypsql/connect.html#hash_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypsql.connect.hash_value" title="Link to this definition"></a></dt>
+<dd><p>Compute a SHA-256 hash (hex digest) of a UTF-8 string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>str</em>) – The input string to hash.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The 64-character hexadecimal SHA-256 digest.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">digest</span> <span class="o">=</span> <span class="n">hash_value</span><span class="p">(</span><span class="s2">&quot;p@ssw0rd&quot;</span><span class="p">)</span>
+<span class="c1"># &#39;5e884898da28047151d0e56f8dc62927...&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ssh_connect.html" class="btn btn-neutral float-right" title="SSH_Connect" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Marius Liebald.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

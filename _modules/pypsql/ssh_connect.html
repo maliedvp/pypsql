@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pypsql.ssh_connect &mdash; pypSQL 1.0.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/extra.css?v=503a7970" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=71272d9f"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pypSQL
+              <img src="../../_static/pypsql_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#pipy">PiPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install.html#from-source">From Source</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../connect.html">Connect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.path"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.path</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.db_credential_file"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.db_credential_file</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.server"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.server</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.port"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.port</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.name_database"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.name_database</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.name_user"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.name_user</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.password_user"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.password_user</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.engine"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.engine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.__init__"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.drop_table"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.drop_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.execute_script"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.execute_script()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.get_data"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.get_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.is_multiline"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.is_multiline()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.push_data"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.push_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../connect.html#pypsql.connect.DatabaseConnector.start_engine"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.start_engine()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../connect.html#pypsql.connect.get_credentials"><code class="docutils literal notranslate"><span class="pre">get_credentials()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../connect.html#pypsql.connect.hash_value"><code class="docutils literal notranslate"><span class="pre">hash_value()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssh_connect.html">SSH_Connect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ssh_connect.html#pypsql.ssh_connect.SSHDatabaseConnector"><code class="docutils literal notranslate"><span class="pre">SSHDatabaseConnector</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ssh_connect.html#pypsql.ssh_connect.SSHDatabaseConnector.__init__"><code class="docutils literal notranslate"><span class="pre">SSHDatabaseConnector.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../LICENSE.html">License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pypSQL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">pypsql.ssh_connect</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for pypsql.ssh_connect</h1><div class="highlight"><pre>
+<span></span><span class="c1"># ssh_connect.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">paramiko</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sshtunnel</span><span class="w"> </span><span class="kn">import</span> <span class="n">SSHTunnelForwarder</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.connect</span><span class="w"> </span><span class="kn">import</span> <span class="n">DatabaseConnector</span><span class="p">,</span> <span class="n">get_credentials</span>
+
+<div class="viewcode-block" id="SSHDatabaseConnector">
+<a class="viewcode-back" href="../../ssh_connect.html#pypsql.ssh_connect.SSHDatabaseConnector">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SSHDatabaseConnector</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Establish a secure SSH tunnel to a remote database host and manage connections.</span>
+
+<span class="sd">    This class creates an SSH tunnel to a remote database server, forwarding a local port to</span>
+<span class="sd">    the remote host and port defined in a credentials file. It integrates with</span>
+<span class="sd">    :class:`DatabaseConnector` to enable data operations (query, insert, drop, execute) over the</span>
+<span class="sd">    secure tunnel.</span>
+
+<span class="sd">    The SSH connection uses a specified private key and credentials defined in a `.env` file.</span>
+<span class="sd">    Once connected, database queries can be executed transparently through the tunnel.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ssh_port (int, optional): SSH port on the remote host. Defaults to 22.</span>
+<span class="sd">        ssh_key_passphrase (str | None, optional): Passphrase for the SSH private key if encrypted.</span>
+<span class="sd">            Defaults to None.</span>
+<span class="sd">        db_credential_file (str, optional): Name of the credentials file containing both SSH and</span>
+<span class="sd">            database connection information. Defaults to &quot;.env&quot;.</span>
+<span class="sd">        path (pathlib.Path, optional): Path to the directory containing the credentials file.</span>
+<span class="sd">            Defaults to the current working directory.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the credentials file is missing required keys or if the port is invalid.</span>
+<span class="sd">        RuntimeError: If the SSH tunnel fails to establish.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="SSHDatabaseConnector.__init__">
+<a class="viewcode-back" href="../../ssh_connect.html#pypsql.ssh_connect.SSHDatabaseConnector.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">ssh_port</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">22</span><span class="p">,</span>
+        <span class="n">ssh_key_passphrase</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">db_credential_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;.env&quot;</span><span class="p">,</span>
+        <span class="n">path</span><span class="p">:</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db_credential_file</span> <span class="o">=</span> <span class="n">db_credential_file</span>
+
+        <span class="c1"># 1) Read remote DB endpoint from credentials (no manual host/port)</span>
+        <span class="c1"># and information on the host</span>
+        <span class="n">credentials</span> <span class="o">=</span> <span class="n">get_credentials</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_credential_file</span><span class="p">)</span>
+        <span class="n">rb_host</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;SERVER&#39;</span><span class="p">]</span>
+        <span class="n">rb_port</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;PORT&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">server</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;SERVER&#39;</span><span class="p">]</span>
+
+        <span class="n">ssh_host</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;SSH_HOST&#39;</span><span class="p">]</span>
+        <span class="n">ssh_username</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;SSH_USERNAME&#39;</span><span class="p">]</span>
+        <span class="n">ssh_pkey</span> <span class="o">=</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">&#39;SSH_PKEY&#39;</span><span class="p">]</span>
+        <span class="n">ssh_port</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">credentials</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;SSH_PORT&#39;</span><span class="p">,</span> <span class="n">ssh_port</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">rb_host</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">rb_port</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Missing SERVER and/or PORT in credentials file. &quot;</span>
+                <span class="s2">&quot;Expected keys: SERVER, PORT, NAME_DATABASE, NAME_USER, PASSWORD_USER.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">rb_port</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rb_port</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PORT must be an integer, got: </span><span class="si">{</span><span class="n">rb_port</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+
+        <span class="c1"># Prevent Paramiko from probing other keys (like ~/.ssh/id_ed25519)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;SSH_AUTH_SOCK&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># Load ONLY the specified private key</span>
+        <span class="n">pkey_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">ssh_pkey</span><span class="p">)</span><span class="o">.</span><span class="n">expanduser</span><span class="p">())</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">Ed25519Key</span><span class="o">.</span><span class="n">from_private_key_file</span><span class="p">(</span>
+            <span class="n">pkey_path</span><span class="p">,</span>
+            <span class="n">password</span><span class="o">=</span><span class="n">ssh_key_passphrase</span>  <span class="c1"># None if unencrypted</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Start SSH tunnel: local listens on ephemeral port; remote is from creds</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tunnel</span> <span class="o">=</span> <span class="n">SSHTunnelForwarder</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">ssh_host</span><span class="p">,</span> <span class="n">ssh_port</span><span class="p">),</span>
+            <span class="n">ssh_username</span><span class="o">=</span><span class="n">ssh_username</span><span class="p">,</span>
+            <span class="n">ssh_pkey</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
+            <span class="n">allow_agent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">local_bind_address</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>        <span class="c1"># ephemeral local port</span>
+            <span class="n">remote_bind_address</span><span class="o">=</span><span class="p">(</span><span class="n">rb_host</span><span class="p">,</span> <span class="n">rb_port</span><span class="p">),</span>     <span class="c1"># from credentials file</span>
+            <span class="n">set_keepalive</span><span class="o">=</span><span class="mf">30.0</span><span class="p">,</span>
+            <span class="n">mute_exceptions</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_tunnel</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_tunnel&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tunnel</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_tunnel</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">pass</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Failed to establish SSH tunnel to </span><span class="si">{</span><span class="n">ssh_host</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">ssh_port</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="p">(</span><span class="n">rb_host</span><span class="p">,</span><span class="w"> </span><span class="n">rb_port</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+
+        <span class="n">assigned_port</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_tunnel</span><span class="o">.</span><span class="n">local_bind_port</span><span class="p">)</span>
+
+        <span class="c1"># Now create the DB connector: user/pass/db still come from the same creds</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">DatabaseConnector</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">db_credential_file</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">db_credential_file</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">server</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">assigned_port</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">_reconnect_engine</span><span class="p">()</span></div>
+
+
+    <span class="c1"># Delegations</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">push_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">push_data</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">drop_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">drop_table</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">execute_script</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="c1"># Cleanup / context manager</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_tunnel&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tunnel</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_tunnel</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc</span><span class="p">,</span> <span class="n">tb</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">();</span> <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Marius Liebald.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

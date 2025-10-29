@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pypSQL &mdash; pypSQL 1.0.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/extra.css?v=503a7970" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=71272d9f"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            pypSQL
+              <img src="_static/pypsql_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#pipy">PiPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#from-source">From Source</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="connect.html">Connect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.path"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.path</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.db_credential_file"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.db_credential_file</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.server"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.server</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.port"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.port</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.name_database"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.name_database</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.name_user"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.name_user</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.password_user"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.password_user</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.engine"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.engine</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.__init__"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.drop_table"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.drop_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.execute_script"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.execute_script()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.get_data"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.get_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.is_multiline"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.is_multiline()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.push_data"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.push_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#pypsql.connect.DatabaseConnector.start_engine"><code class="docutils literal notranslate"><span class="pre">DatabaseConnector.start_engine()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#pypsql.connect.get_credentials"><code class="docutils literal notranslate"><span class="pre">get_credentials()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#pypsql.connect.hash_value"><code class="docutils literal notranslate"><span class="pre">hash_value()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ssh_connect.html">SSH_Connect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ssh_connect.html#pypsql.ssh_connect.SSHDatabaseConnector"><code class="docutils literal notranslate"><span class="pre">SSHDatabaseConnector</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ssh_connect.html#pypsql.ssh_connect.SSHDatabaseConnector.__init__"><code class="docutils literal notranslate"><span class="pre">SSHDatabaseConnector.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="LICENSE.html">License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">pypSQL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">pypSQL</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pypsql">
+<h1>pypSQL<a class="headerlink" href="#pypsql" title="Link to this heading"></a></h1>
+<a href="https://www.marius-liebald.com/pypsql/index.html" style="float:right; margin-left:10px;">
+<img src="_static/img/pypsql_logo_dark.png" style="height:139px !important; width:auto !important;" alt="pypsql utilities website" />
+</a>
+<!-- badges: start -->
+<p><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg" /></p>
+<!-- badges: end -->
+<p><code class="docutils literal notranslate"><span class="pre">pypsql</span></code> is a lightweight framework for connecting to PostgreSQL
+databases, whether locally or remotely hosted. It builds on top of
+<a class="reference external" href="https://www.sqlalchemy.org/"><code class="docutils literal notranslate"><span class="pre">SQLAlchemy</span></code></a> to provide a simple,
+Pythonic interface for establishing connections, running queries, and
+managing database sessions.</p>
+</section>
+<section id="contributors">
+<h1>Contributors<a class="headerlink" href="#contributors" title="Link to this heading"></a></h1>
+<p><a class="reference external" href="https://www.marius-liebald.de">Marius Liebald</a> (maintainer)</p>
+</section>
+<section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pypsql
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h1>
+<section id="local-usage">
+<h2>Local Usage<a class="headerlink" href="#local-usage" title="Link to this heading"></a></h2>
+<section id="provide-database-credentials">
+<h3>Provide database credentials<a class="headerlink" href="#provide-database-credentials" title="Link to this heading"></a></h3>
+<p>You can store the database connection details in a file, for example
+<code class="docutils literal notranslate"><span class="pre">.env</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SERVER</span><span class="o">=&lt;</span><span class="n">host</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">address</span><span class="o">&gt;</span>   <span class="c1"># e.g., localhost, 127.0.0.1, or a public IP</span>
+<span class="n">PORT</span><span class="o">=&lt;</span><span class="n">port</span> <span class="n">number</span><span class="o">&gt;</span>              <span class="c1"># default: 5432</span>
+<span class="n">NAME_DATABASE</span><span class="o">=&lt;</span><span class="n">database</span> <span class="n">name</span><span class="o">&gt;</span>   <span class="c1"># e.g., my_db</span>
+<span class="n">NAME_USER</span><span class="o">=&lt;</span><span class="n">role</span><span class="o">&gt;</span>                <span class="c1"># e.g., Alice</span>
+<span class="n">PASSWORD_USER</span><span class="o">=&lt;</span><span class="n">password</span><span class="o">&gt;</span>        <span class="c1"># e.g., 123abc</span>
+</pre></div>
+</div>
+<p>You may place this file anywhere on the client machine. Importantly,
+this step is optional. You can also provide the variables interactively
+via terminal prompts.</p>
+</section>
+<section id="when-to-be-used">
+<h3>When to be used?<a class="headerlink" href="#when-to-be-used" title="Link to this heading"></a></h3>
+<p>Use this approach if an SSH tunnel is not needed. This is the case if:</p>
+<ul class="simple">
+<li><p>the server and client run on the same machine,</p></li>
+<li><p>the server and client are in the same (virtual) network, or</p></li>
+<li><p>the server is accessible via its public IP.</p></li>
+</ul>
+</section>
+<section id="connecting">
+<h3>Connecting<a class="headerlink" href="#connecting" title="Link to this heading"></a></h3>
+<p>In this case, simply run the Python script:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pypsql</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">sql_script</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SELECT *</span>
+<span class="s2">FROM customers</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1"># local connection</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">pypsql</span><span class="o">.</span><span class="n">DatabaseConnector</span><span class="p">(</span>
+    <span class="n">db_credential_file</span><span class="o">=</span><span class="s1">&#39;.env_local&#39;</span>
+<span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">sql_script</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="usage-via-an-ssh-tunnel">
+<h2>Usage via an SSH Tunnel<a class="headerlink" href="#usage-via-an-ssh-tunnel" title="Link to this heading"></a></h2>
+<section id="provide-database-ssh-credentials">
+<h3>Provide database &amp; SSH credentials<a class="headerlink" href="#provide-database-ssh-credentials" title="Link to this heading"></a></h3>
+<p>Again, create an <code class="docutils literal notranslate"><span class="pre">.env</span></code> file. You may want to store it in the same
+directory as the Python script that accesses the database when executed.
+This time the <code class="docutils literal notranslate"><span class="pre">.env</span></code> needs to follow this structure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SERVER</span><span class="o">=&lt;</span><span class="n">host</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">address</span><span class="o">&gt;</span>              <span class="c1"># e.g., localhost, 127.0.0.1</span>
+<span class="n">PORT</span><span class="o">=&lt;</span><span class="n">port</span> <span class="n">number</span><span class="o">&gt;</span>                         <span class="c1"># default: 5432</span>
+<span class="n">NAME_DATABASE</span><span class="o">=&lt;</span><span class="n">database</span> <span class="n">name</span><span class="o">&gt;</span>              <span class="c1"># e.g., my_db</span>
+<span class="n">NAME_USER</span><span class="o">=&lt;</span><span class="n">role</span><span class="o">&gt;</span>                           <span class="c1"># e.g., Alice</span>
+<span class="n">PASSWORD_USER</span><span class="o">=&lt;</span><span class="n">password</span><span class="o">&gt;</span>                   <span class="c1"># e.g., 123abc</span>
+<span class="n">SSH_USERNAME</span><span class="o">=&lt;</span><span class="n">public</span> <span class="n">IP</span> <span class="n">of</span> <span class="n">remote</span> <span class="n">server</span><span class="o">&gt;</span>
+<span class="n">SSH_PKEY</span><span class="o">=&lt;</span><span class="n">path</span> <span class="n">of</span> <span class="n">private</span> <span class="n">SSH</span> <span class="n">key</span><span class="o">&gt;</span>         <span class="c1"># e.g., ~/.ssh/id_rsa</span>
+<span class="n">SSH_PORT</span><span class="o">=&lt;</span><span class="n">ssh</span> <span class="n">port</span> <span class="n">of</span> <span class="n">remote</span> <span class="n">server</span><span class="o">&gt;</span>       <span class="c1"># default: 22</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>Connecting<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Then you can connect to the database via the SSH tunnel in the following
+way:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypsql</span><span class="w"> </span><span class="kn">import</span> <span class="n">SSHDatabaseConnector</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">sql_script</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SELECT *</span>
+<span class="s2">FROM customers</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="k">with</span> <span class="n">SSHDatabaseConnector</span><span class="p">(</span>
+  <span class="n">ssh_port</span> <span class="o">=</span> <span class="mi">22</span><span class="p">,</span>
+  <span class="n">db_credential_file</span><span class="o">=</span><span class="s1">&#39;.env_ssh&#39;</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">ssh_db</span><span class="p">:</span>
+  <span class="n">df</span> <span class="o">=</span> <span class="n">ssh_db</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">sql_script</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="official-documentation">
+<h1>Official Documentation<a class="headerlink" href="#official-documentation" title="Link to this heading"></a></h1>
+<p>The documentation is hosted under
+<a class="reference external" href="https://www.marius-liebald.com/pypsql/index.html">https://www.marius-liebald.com/pypsql/index.html</a></p>
+</section>
+<section id="license">
+<h1>License<a class="headerlink" href="#license" title="Link to this heading"></a></h1>
+<p>The package is distributed under the <a href="LICENSE.html">MIT license</a>.</p>
+</section>
+<section id="references">
+<h1>References<a class="headerlink" href="#references" title="Link to this heading"></a></h1>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-sqlalchemy2025" class="csl-entry">
+<p>Bayer, Michael, and contributors. 2025. “SQLAlchemy.”
+<a class="reference external" href="https://www.sqlalchemy.org/">https://www.sqlalchemy.org/</a>.</p>
+</div>
+</div></section>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<section id="indices-and-tables">
+<h1>Indices and Tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Marius Liebald.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
